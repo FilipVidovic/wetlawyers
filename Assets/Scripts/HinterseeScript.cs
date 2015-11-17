@@ -3,9 +3,11 @@ using System.Collections;
 
 public class HinterseeScript : MonoBehaviour {
 
+	public PlayerTimer ourtimer;
+
 	// Use this for initialization
 	void Start () {
-	
+
 	}
 	
 	// Update is called once per frame
@@ -15,6 +17,6 @@ public class HinterseeScript : MonoBehaviour {
 
 	void OnTriggerEnter2D (Collider2D other)
 	{
-		print ("yeehaw");
+		ourtimer.wetLawyer ();
 	}
 }

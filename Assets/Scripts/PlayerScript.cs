@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class PlayerScript : MonoBehaviour {
@@ -13,6 +14,11 @@ public class PlayerScript : MonoBehaviour {
 	private BoxCollider2D boxCollider;
 	public Rigidbody2D rigidBody;
 	public float myforce;
+	
+	public RawImage drunkFrame;
+	public RawImage timeFrame;
+	public RawImage thistime;
+	private Quaternion quatty;
 
 	// Use this for initialization
 	void Start () {
@@ -23,10 +29,14 @@ public class PlayerScript : MonoBehaviour {
 
 		boxCollider = GetComponent <BoxCollider2D> ();
 		//rigidBody = GetComponent <Rigidbody2D> ();
+		quatty = new Quaternion (0, 0, 0, 1);
 	}
 	
 	// Update is called once per frame			FIXEDUPDATE
 	void FixedUpdate () {
+		drunkFrame.transform.rotation = quatty;
+		timeFrame.transform.rotation = quatty;
+
 		if (Input.GetKeyDown (KeyCode.LeftArrow))
 			//direction = new Vector2 (-inverseMoveTime * Time.deltaTime, 0);
 			//rotvec.Set (0, 0, 1);
