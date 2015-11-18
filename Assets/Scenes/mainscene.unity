@@ -406,6 +406,7 @@ GameObject:
   - 114: {fileID: 444796514}
   - 61: {fileID: 444796516}
   - 114: {fileID: 444796517}
+  - 249: {fileID: 444796518}
   m_Layer: 5
   m_Name: Hintersee
   m_TagString: Untagged
@@ -427,8 +428,8 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 389, y: -10}
-  m_SizeDelta: {x: 250, y: 500}
+  m_AnchoredPosition: {x: 389, y: 0}
+  m_SizeDelta: {x: 250, y: 768}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &444796514
 MonoBehaviour:
@@ -465,10 +466,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_Offset: {x: .0294189453, y: .558319092}
   serializedVersion: 2
-  m_Size: {x: 250, y: 500}
+  m_Size: {x: 250, y: 768}
 --- !u!114 &444796517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -481,6 +482,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ourtimer: {fileID: 1181535257}
+--- !u!249 &444796518
+AreaEffector2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 444796512}
+  m_Enabled: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceDirection: 0
+  m_ForceMagnitude: 30
+  m_ForceVariation: 0
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_ForceTarget: 0
 --- !u!1001 &481838936
 Prefab:
   m_ObjectHideFlags: 0
