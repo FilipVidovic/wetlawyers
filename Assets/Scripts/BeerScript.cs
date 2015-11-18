@@ -3,7 +3,7 @@ using System.Collections;
 
 public class BeerScript : MonoBehaviour {
 
-	public PlayerScript peter;
+	public PlayerScript player;
 	public GameObject Figure;
 
 	// Use this for initialization
@@ -18,7 +18,9 @@ public class BeerScript : MonoBehaviour {
 
 	void OnTriggerEnter2D (Collider2D other)
 	{
-		peter.rigidBody.mass += 150;
+		//player.rigidBody.mass += 150;
+		player.addDrunkeness ();
+
 		print ("beeeeeeeeeeeeeeeeeeeer");
 
 		Destroy (Figure);

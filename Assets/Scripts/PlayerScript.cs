@@ -18,7 +18,9 @@ public class PlayerScript : MonoBehaviour {
 	public RawImage drunkFrame;
 	public RawImage timeFrame;
 	public RawImage thistime;
+	public RawImage drunkenessLevel;
 	private Quaternion quatty;
+	public GlobalVars globalvars;
 
 	// Use this for initialization
 	void Start () {
@@ -30,6 +32,8 @@ public class PlayerScript : MonoBehaviour {
 		boxCollider = GetComponent <BoxCollider2D> ();
 		//rigidBody = GetComponent <Rigidbody2D> ();
 		quatty = new Quaternion (0, 0, 0, 1);
+
+		drunkenessLevel.transform.localScale = new Vector3 (0, 1, 1);
 	}
 	
 	// Update is called once per frame			FIXEDUPDATE
@@ -97,6 +101,16 @@ public class PlayerScript : MonoBehaviour {
 	void OnTriggerEnter2D (Collider2D other)
 	{
 		print ("yippie");
+	}
+
+	public void addDrunkeness()
+	{
+		rigidBody.mass += globalvars.getBeerBonus ();
+
+		if (rigidBody.mass > globalvars.getMaxPlayer ())
+			rigidBody.mass = globalvars.getMaxPlayer ();
+
+		drunkenessLevel.transform.localScale = new Vector3 (rigidBody.mass / globalvars.getMaxPlayer(), 1, 1);
 	}
 
 	/*private IEnumerator smoothmoving(Vector3 end)
