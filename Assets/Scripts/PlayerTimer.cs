@@ -6,7 +6,7 @@ public class PlayerTimer : MonoBehaviour {
 
 	public RawImage timebar;
 	public float endTime;
-	//public GlobalVars globalvars;
+	public GlobalVars globalvars;
 	public float maxtime = 99;
 	public float wettime = 33;
 
@@ -18,7 +18,7 @@ public class PlayerTimer : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if ((endTime - Time.time) > 0) {
-			timebar.transform.localScale = new Vector3 ((endTime - Time.time) / maxtime, 1, 1);
+			timebar.transform.localScale = new Vector3 ((endTime - Time.time) / globalvars.getMaxTime(), 1, 1);
 		} else
 			endTime += maxtime;
 		//thistime.transform.localScale = new Vector3(0, 1, 1);

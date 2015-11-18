@@ -3,8 +3,10 @@ using System.Collections;
 
 public class GlobalVars : MonoBehaviour {
 
-	public static float maxtime = 99;
-	public static float wettime = 33;
+	static float maxtime = 99;
+	static float wettime = 33;
+
+	public int score = 0;
 
 	public float getMaxTime()
 	{

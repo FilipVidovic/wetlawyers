@@ -15,11 +15,14 @@
  */
 
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class HinterseeScript : MonoBehaviour {
 
 	public PlayerTimer ourtimer;
+	public GlobalVars globalvars;
+	public Text scoreText;
 
 	// Use this for initialization
 	void Start () {
@@ -34,5 +37,7 @@ public class HinterseeScript : MonoBehaviour {
 	void OnTriggerEnter2D (Collider2D other)
 	{
 		ourtimer.wetLawyer ();
+		globalvars.score += 1;
+		scoreText.text = globalvars.score.ToString();
 	}
 }
