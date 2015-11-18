@@ -32,7 +32,7 @@ public class PlayerScript : MonoBehaviour {
 		boxCollider = GetComponent <BoxCollider2D> ();
 		//rigidBody = GetComponent <Rigidbody2D> ();
 		quatty = new Quaternion (0, 0, 0, 1);
-
+		
 		drunkenessLevel.transform.localScale = new Vector3 (0, 1, 1);
 	}
 	
@@ -40,33 +40,23 @@ public class PlayerScript : MonoBehaviour {
 	void FixedUpdate () {
 		drunkFrame.transform.rotation = quatty;
 		timeFrame.transform.rotation = quatty;
+		rotval = 0;
+		dir = 0;
 
-		if (Input.GetKeyDown (KeyCode.LeftArrow))
+		if (Input.GetKey (KeyCode.LeftArrow))
 			//direction = new Vector2 (-inverseMoveTime * Time.deltaTime, 0);
 			//rotvec.Set (0, 0, 1);
 			rotval = 1;
-		else if (Input.GetKeyDown (KeyCode.RightArrow))
+		if (Input.GetKey (KeyCode.RightArrow))
 			//direction = new Vector2 (inverseMoveTime * Time.deltaTime, 0);
 			//rotvec.Set (0, 0, -1);
 			rotval = -1;
-		else if (Input.GetKeyDown (KeyCode.DownArrow))
+		if (Input.GetKey (KeyCode.DownArrow))
 			//direction = new Vector2 (-inverseMoveTime * Time.deltaTime, -inverseMoveTime * Time.deltaTime);
 			dir = -inverseMoveTime * Time.deltaTime;
-		else if (Input.GetKeyDown (KeyCode.UpArrow))
+		if (Input.GetKey (KeyCode.UpArrow))
 			//direction = new Vector2 (inverseMoveTime * Time.deltaTime, inverseMoveTime * Time.deltaTime);
 			dir = inverseMoveTime * Time.deltaTime;
-		else if (Input.GetKeyUp (KeyCode.LeftArrow))
-			//rotvec.Set (0, 0, 0);
-			rotval = 0;
-		else if (Input.GetKeyUp (KeyCode.RightArrow))
-			//rotvec.Set (0, 0, 0);
-			rotval = 0;
-		else if (Input.GetKeyUp (KeyCode.DownArrow))
-			//direction = new Vector2 (0, 0);
-			dir = 0;
-		else if (Input.GetKeyUp (KeyCode.UpArrow))
-			//direction = new Vector2 (0, 0);
-			dir = 0;
 
 		moving ();
 		rotating ();
@@ -80,7 +70,7 @@ public class PlayerScript : MonoBehaviour {
 
 		//this.transform.localPosition += new Vector3(Mathf.Cos(eulerz) * direction.x, Mathf.Sin(eulerz) * direction.y, 0);
 
-		rigidBody.AddRelativeForce (new Vector3 (dir, 0, 0) * myforce);
+		rigidBody.AddRelativeForce (new Vector2 (0, dir) * myforce);
 		//this.gameObject.transform.
 		//Vector2 start = transform.position;
 		//Vector2 end = start - new Vector2(x,y);
@@ -100,19 +90,19 @@ public class PlayerScript : MonoBehaviour {
 
 	void OnTriggerEnter2D (Collider2D other)
 	{
-		print ("yippie");
+		//print ("yippie");
 	}
 
 	public void addDrunkeness()
 	{
 		rigidBody.mass += globalvars.getBeerBonus ();
-
+		
 		if (rigidBody.mass > globalvars.getMaxPlayer ())
 			rigidBody.mass = globalvars.getMaxPlayer ();
-
+		
 		drunkenessLevel.transform.localScale = new Vector3 (rigidBody.mass / globalvars.getMaxPlayer(), 1, 1);
 	}
-
+	
 	/*private IEnumerator smoothmoving(Vector3 end)
 	{
 

@@ -9,6 +9,7 @@ public class GlobalVars : MonoBehaviour {
 	static float beerbonus = 50;
 
 	public int score = 0;
+	public bool carry = false;
 
 	public float getMaxTime()
 	{

@@ -5,6 +5,8 @@ using System.Collections;
 public class LawyerScript : MonoBehaviour {
 
 	public Rigidbody2D rigidBody;
+	public Canvas parentCanvas;
+	public GlobalVars globalvars;
 	//public RawImage drunkFrame;
 
 	// Use this for initialization
@@ -27,5 +29,39 @@ public class LawyerScript : MonoBehaviour {
 
 		//drunkFrame.transform.localPosition = wantedpos;
 		//drunk.transform.localScale = new Vector3(0.5f, 1, 1);
+
+		//if (globalvars.carry == true && Input.GetKeyDown ("space")) {
+		if (!Input.GetKey ("space")) {
+			//if(globalvars.carry == true)
+			//{
+				print ("Hello Mother");
+				this.transform.parent = parentCanvas.transform;
+				rigidBody.mass = 10;
+				rigidBody.isKinematic = false;
+				globalvars.carry = false;
+			//}
+		}
+	}
+
+	void OnTriggerEnter2D (Collider2D other)
+	{
+		//if (globalvars.carry == false && other.gameObject.name.Equals("Player"))
+		if (other.gameObject.name.Equals("Player"))
+		{
+			if(globalvars.carry == false && Input.GetKey ("space"))
+			{
+				//if (Input.GetKey ("space")) {
+					print ("Hello Father");
+					this.transform.parent = other.transform;
+					//this.transform.parent.SetParent(this.transform, false);
+
+					rigidBody.mass = 0;
+					rigidBody.isKinematic = true;
+					globalvars.carry = true;
+				//}
+			}
+		}
+		//print ("yippie");
+		//this.GetComponentInChildren().
 	}
 }

@@ -87,6 +87,23 @@ NavMeshSettings:
     cellSize: .166666672
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &31439082 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 147138, guid: 01824d9864f79fe4c8d79e38511ec39e, type: 2}
+  m_PrefabInternal: {fileID: 1562863568}
+--- !u!61 &31439083
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 31439082}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 20, y: 20}
 --- !u!1001 &130756164
 Prefab:
   m_ObjectHideFlags: 0
@@ -170,6 +187,18 @@ Prefab:
       propertyPath: m_Name
       value: Lawyer 5
       objectReference: {fileID: 0}
+    - target: {fileID: 6108904, guid: 01824d9864f79fe4c8d79e38511ec39e, type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11421898, guid: 01824d9864f79fe4c8d79e38511ec39e, type: 2}
+      propertyPath: parentCanvas
+      value: 
+      objectReference: {fileID: 1641692176}
+    - target: {fileID: 11421898, guid: 01824d9864f79fe4c8d79e38511ec39e, type: 2}
+      propertyPath: globalvars
+      value: 
+      objectReference: {fileID: 1509992454}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 01824d9864f79fe4c8d79e38511ec39e, type: 2}
   m_IsPrefabParent: 0
@@ -321,6 +350,18 @@ Prefab:
       propertyPath: m_Name
       value: Lawyer 7
       objectReference: {fileID: 0}
+    - target: {fileID: 6108904, guid: 01824d9864f79fe4c8d79e38511ec39e, type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11421898, guid: 01824d9864f79fe4c8d79e38511ec39e, type: 2}
+      propertyPath: parentCanvas
+      value: 
+      objectReference: {fileID: 1641692176}
+    - target: {fileID: 11421898, guid: 01824d9864f79fe4c8d79e38511ec39e, type: 2}
+      propertyPath: globalvars
+      value: 
+      objectReference: {fileID: 1509992454}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 01824d9864f79fe4c8d79e38511ec39e, type: 2}
   m_IsPrefabParent: 0
@@ -389,6 +430,23 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 316174622}
+--- !u!1 &350443896 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 147138, guid: 01824d9864f79fe4c8d79e38511ec39e, type: 2}
+  m_PrefabInternal: {fileID: 827639641}
+--- !u!61 &350443897
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 350443896}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 20, y: 20}
 --- !u!224 &391825584 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 22437690, guid: 4d791cba65704f246bf0505c880bcfd4,
@@ -500,6 +558,23 @@ AreaEffector2D:
   m_Drag: 0
   m_AngularDrag: 0
   m_ForceTarget: 0
+--- !u!1 &481125459 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 147138, guid: 01824d9864f79fe4c8d79e38511ec39e, type: 2}
+  m_PrefabInternal: {fileID: 955191550}
+--- !u!61 &481125460
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 481125459}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 20, y: 20}
 --- !u!1001 &481838936
 Prefab:
   m_ObjectHideFlags: 0
@@ -583,6 +658,18 @@ Prefab:
       propertyPath: m_Name
       value: Lawyer 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6108904, guid: 01824d9864f79fe4c8d79e38511ec39e, type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11421898, guid: 01824d9864f79fe4c8d79e38511ec39e, type: 2}
+      propertyPath: parentCanvas
+      value: 
+      objectReference: {fileID: 1641692176}
+    - target: {fileID: 11421898, guid: 01824d9864f79fe4c8d79e38511ec39e, type: 2}
+      propertyPath: globalvars
+      value: 
+      objectReference: {fileID: 1509992454}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 01824d9864f79fe4c8d79e38511ec39e, type: 2}
   m_IsPrefabParent: 0
@@ -741,6 +828,23 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 536209516}
+--- !u!1 &546672192 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 147138, guid: 01824d9864f79fe4c8d79e38511ec39e, type: 2}
+  m_PrefabInternal: {fileID: 481838936}
+--- !u!61 &546672193
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 546672192}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 20, y: 20}
 --- !u!1001 &565109698
 Prefab:
   m_ObjectHideFlags: 0
@@ -824,6 +928,18 @@ Prefab:
       propertyPath: m_Name
       value: Lawyer 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6108904, guid: 01824d9864f79fe4c8d79e38511ec39e, type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11421898, guid: 01824d9864f79fe4c8d79e38511ec39e, type: 2}
+      propertyPath: parentCanvas
+      value: 
+      objectReference: {fileID: 1641692176}
+    - target: {fileID: 11421898, guid: 01824d9864f79fe4c8d79e38511ec39e, type: 2}
+      propertyPath: globalvars
+      value: 
+      objectReference: {fileID: 1509992454}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 01824d9864f79fe4c8d79e38511ec39e, type: 2}
   m_IsPrefabParent: 0
@@ -832,6 +948,23 @@ RectTransform:
   m_PrefabParentObject: {fileID: 22400468, guid: 01824d9864f79fe4c8d79e38511ec39e,
     type: 2}
   m_PrefabInternal: {fileID: 565109698}
+--- !u!1 &597822705 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 147138, guid: 01824d9864f79fe4c8d79e38511ec39e, type: 2}
+  m_PrefabInternal: {fileID: 197207449}
+--- !u!61 &597822706
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 597822705}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 20, y: 20}
 --- !u!1 &638876258
 GameObject:
   m_ObjectHideFlags: 0
@@ -904,6 +1037,7 @@ GameObject:
   - 114: {fileID: 815315718}
   - 50: {fileID: 815315719}
   - 61: {fileID: 815315720}
+  - 61: {fileID: 815315721}
   m_Layer: 5
   m_Name: Player
   m_TagString: Untagged
@@ -983,6 +1117,19 @@ BoxCollider2D:
   m_Offset: {x: -.485046387, y: .55847168}
   serializedVersion: 2
   m_Size: {x: 20, y: 20}
+--- !u!61 &815315721
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 815315715}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 20, y: 20}
 --- !u!1001 &827639641
 Prefab:
   m_ObjectHideFlags: 0
@@ -1024,11 +1171,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22400468, guid: 01824d9864f79fe4c8d79e38511ec39e, type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: -28.2202606
+      value: 164
       objectReference: {fileID: 0}
     - target: {fileID: 22400468, guid: 01824d9864f79fe4c8d79e38511ec39e, type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -58.2434387
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 22400468, guid: 01824d9864f79fe4c8d79e38511ec39e, type: 2}
       propertyPath: m_SizeDelta.x
@@ -1066,6 +1213,18 @@ Prefab:
       propertyPath: m_Name
       value: Lawyer 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6108904, guid: 01824d9864f79fe4c8d79e38511ec39e, type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11421898, guid: 01824d9864f79fe4c8d79e38511ec39e, type: 2}
+      propertyPath: parentCanvas
+      value: 
+      objectReference: {fileID: 1641692176}
+    - target: {fileID: 11421898, guid: 01824d9864f79fe4c8d79e38511ec39e, type: 2}
+      propertyPath: globalvars
+      value: 
+      objectReference: {fileID: 1509992454}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 01824d9864f79fe4c8d79e38511ec39e, type: 2}
   m_IsPrefabParent: 0
@@ -1406,6 +1565,18 @@ Prefab:
       propertyPath: m_Name
       value: Lawyer 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6108904, guid: 01824d9864f79fe4c8d79e38511ec39e, type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11421898, guid: 01824d9864f79fe4c8d79e38511ec39e, type: 2}
+      propertyPath: parentCanvas
+      value: 
+      objectReference: {fileID: 1641692176}
+    - target: {fileID: 11421898, guid: 01824d9864f79fe4c8d79e38511ec39e, type: 2}
+      propertyPath: globalvars
+      value: 
+      objectReference: {fileID: 1509992454}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 01824d9864f79fe4c8d79e38511ec39e, type: 2}
   m_IsPrefabParent: 0
@@ -1419,6 +1590,23 @@ RectTransform:
   m_PrefabParentObject: {fileID: 22437690, guid: 4d791cba65704f246bf0505c880bcfd4,
     type: 2}
   m_PrefabInternal: {fileID: 853221231}
+--- !u!1 &1153366026 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 147138, guid: 01824d9864f79fe4c8d79e38511ec39e, type: 2}
+  m_PrefabInternal: {fileID: 1979803715}
+--- !u!61 &1153366027
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1153366026}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 20, y: 20}
 --- !u!1 &1181535256
 GameObject:
   m_ObjectHideFlags: 0
@@ -1745,6 +1933,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
+  carry: 0
 --- !u!4 &1509992455
 Transform:
   m_ObjectHideFlags: 0
@@ -1817,6 +2006,23 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1520271526}
+--- !u!1 &1539207268 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 147138, guid: 01824d9864f79fe4c8d79e38511ec39e, type: 2}
+  m_PrefabInternal: {fileID: 1544606916}
+--- !u!61 &1539207269
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1539207268}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 20, y: 20}
 --- !u!1001 &1544606916
 Prefab:
   m_ObjectHideFlags: 0
@@ -1900,6 +2106,18 @@ Prefab:
       propertyPath: m_Name
       value: Lawyer 4
       objectReference: {fileID: 0}
+    - target: {fileID: 6108904, guid: 01824d9864f79fe4c8d79e38511ec39e, type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11421898, guid: 01824d9864f79fe4c8d79e38511ec39e, type: 2}
+      propertyPath: parentCanvas
+      value: 
+      objectReference: {fileID: 1641692176}
+    - target: {fileID: 11421898, guid: 01824d9864f79fe4c8d79e38511ec39e, type: 2}
+      propertyPath: globalvars
+      value: 
+      objectReference: {fileID: 1509992454}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 01824d9864f79fe4c8d79e38511ec39e, type: 2}
   m_IsPrefabParent: 0
@@ -1991,6 +2209,18 @@ Prefab:
       propertyPath: m_Name
       value: Lawyer 8
       objectReference: {fileID: 0}
+    - target: {fileID: 6108904, guid: 01824d9864f79fe4c8d79e38511ec39e, type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11421898, guid: 01824d9864f79fe4c8d79e38511ec39e, type: 2}
+      propertyPath: parentCanvas
+      value: 
+      objectReference: {fileID: 1641692176}
+    - target: {fileID: 11421898, guid: 01824d9864f79fe4c8d79e38511ec39e, type: 2}
+      propertyPath: globalvars
+      value: 
+      objectReference: {fileID: 1509992454}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 01824d9864f79fe4c8d79e38511ec39e, type: 2}
   m_IsPrefabParent: 0
@@ -2275,6 +2505,23 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1644112320 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 147138, guid: 01824d9864f79fe4c8d79e38511ec39e, type: 2}
+  m_PrefabInternal: {fileID: 130756164}
+--- !u!61 &1644112321
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1644112320}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 20, y: 20}
 --- !u!1001 &1706415888
 Prefab:
   m_ObjectHideFlags: 0
@@ -2369,6 +2616,23 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4d791cba65704f246bf0505c880bcfd4, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1774456006 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 147138, guid: 01824d9864f79fe4c8d79e38511ec39e, type: 2}
+  m_PrefabInternal: {fileID: 565109698}
+--- !u!61 &1774456007
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1774456006}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 20, y: 20}
 --- !u!224 &1786463693 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 22437690, guid: 4d791cba65704f246bf0505c880bcfd4,
@@ -2518,6 +2782,18 @@ Prefab:
       propertyPath: m_Pivot.y
       value: .5
       objectReference: {fileID: 0}
+    - target: {fileID: 6108904, guid: 01824d9864f79fe4c8d79e38511ec39e, type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11421898, guid: 01824d9864f79fe4c8d79e38511ec39e, type: 2}
+      propertyPath: parentCanvas
+      value: 
+      objectReference: {fileID: 1641692176}
+    - target: {fileID: 11421898, guid: 01824d9864f79fe4c8d79e38511ec39e, type: 2}
+      propertyPath: globalvars
+      value: 
+      objectReference: {fileID: 1509992454}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 01824d9864f79fe4c8d79e38511ec39e, type: 2}
   m_IsPrefabParent: 0
