@@ -19,9 +19,14 @@ public class BeerScript : MonoBehaviour {
 	void OnTriggerEnter2D (Collider2D other)
 	{
 		//player.rigidBody.mass += 150;
+
+		if (other.isTrigger) {
+			return;
+		}
+
 		player.addDrunkeness ();
 
-		print ("beeeeeeeeeeeeeeeeeeeer");
+		//print ("beeeeeeeeeeeeeeeeeeeer");
 
 		Destroy (Figure);
 		Destroy (this);

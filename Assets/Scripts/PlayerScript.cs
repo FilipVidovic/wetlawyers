@@ -22,12 +22,20 @@ public class PlayerScript : MonoBehaviour {
 	private Quaternion quatty;
 	public GlobalVars globalvars;
 
+	private float rotdelay;
+	private float movedelay;
+	public float drunkeness;
+
 	// Use this for initialization
 	void Start () {
 		inverseMoveTime = 1f / moveTime;
 		direction = new Vector2 (0, 0);
 		rotvec = new Vector3 (0, 0, 0);
 		rotval = 0;
+
+		rotdelay = 0;
+		movedelay = 0;
+		drunkeness = 0;
 
 		boxCollider = GetComponent <BoxCollider2D> ();
 		//rigidBody = GetComponent <Rigidbody2D> ();
@@ -43,23 +51,54 @@ public class PlayerScript : MonoBehaviour {
 		rotval = 0;
 		dir = 0;
 
-		if (Input.GetKey (KeyCode.LeftArrow))
+		if (Input.GetKeyDown (KeyCode.UpArrow) || Input.GetKeyDown (KeyCode.DownArrow)) {
+			movedelay = drunkeness/2;
+		}
+		if (Input.GetKeyDown (KeyCode.LeftArrow) || Input.GetKeyDown (KeyCode.RightArrow)) {
+			rotdelay = drunkeness/3;
+		}
+
+		if (Input.GetKey (KeyCode.LeftArrow)) {
 			//direction = new Vector2 (-inverseMoveTime * Time.deltaTime, 0);
 			//rotvec.Set (0, 0, 1);
-			rotval = 1;
-		if (Input.GetKey (KeyCode.RightArrow))
-			//direction = new Vector2 (inverseMoveTime * Time.deltaTime, 0);
-			//rotvec.Set (0, 0, -1);
-			rotval = -1;
-		if (Input.GetKey (KeyCode.DownArrow))
+			if(rotdelay > 0)
+			{
+				rotdelay -= 1;
+			}
+			else
+				rotval = 1;
+		}
+		if (Input.GetKey (KeyCode.RightArrow)) {
+			if (rotdelay > 0) {
+				rotdelay -= 1;
+			} else
+				rotval = -1;
+		}
+		if (Input.GetKey (KeyCode.DownArrow)) {
+			if (movedelay > 0) {
+				movedelay -= 1;
+			} else
+				dir = -inverseMoveTime * Time.deltaTime;
+		}
 			//direction = new Vector2 (-inverseMoveTime * Time.deltaTime, -inverseMoveTime * Time.deltaTime);
-			dir = -inverseMoveTime * Time.deltaTime;
-		if (Input.GetKey (KeyCode.UpArrow))
+			
+		if (Input.GetKey (KeyCode.UpArrow)) {
+			if (movedelay > 0) {
+				movedelay -= 1;
+			} else
+				dir = inverseMoveTime * Time.deltaTime;
+		}
 			//direction = new Vector2 (inverseMoveTime * Time.deltaTime, inverseMoveTime * Time.deltaTime);
-			dir = inverseMoveTime * Time.deltaTime;
 
 		moving ();
 		rotating ();
+
+		drunkeness -= 0.005f;
+		if (drunkeness < 0) {
+			drunkeness = 0;
+		}
+		
+		drunkenessLevel.transform.localScale = new Vector3 (drunkeness / 100f, 1, 1);
 	}
 
 	private bool moving()
@@ -95,12 +134,18 @@ public class PlayerScript : MonoBehaviour {
 
 	public void addDrunkeness()
 	{
-		rigidBody.mass += globalvars.getBeerBonus ();
+		//rigidBody.mass += globalvars.getBeerBonus ();
 		
-		if (rigidBody.mass > globalvars.getMaxPlayer ())
-			rigidBody.mass = globalvars.getMaxPlayer ();
-		
-		drunkenessLevel.transform.localScale = new Vector3 (rigidBody.mass / globalvars.getMaxPlayer(), 1, 1);
+		//if (rigidBody.mass > globalvars.getMaxPlayer ())
+		//	rigidBody.mass = globalvars.getMaxPlayer ();
+		//print (
+		drunkeness += 20;
+
+		if (drunkeness > 100) {
+			drunkeness = 100;
+		}
+
+		drunkenessLevel.transform.localScale = new Vector3 (drunkeness / 100f, 1, 1);
 	}
 	
 	/*private IEnumerator smoothmoving(Vector3 end)
