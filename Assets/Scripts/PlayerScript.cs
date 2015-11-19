@@ -35,7 +35,7 @@ public class PlayerScript : MonoBehaviour {
 
 		rotdelay = 0;
 		movedelay = 0;
-		drunkeness = 0;
+		drunkeness = 20;
 
 		boxCollider = GetComponent <BoxCollider2D> ();
 		//rigidBody = GetComponent <Rigidbody2D> ();
