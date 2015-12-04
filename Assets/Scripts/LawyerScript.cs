@@ -47,7 +47,7 @@ public class LawyerScript : MonoBehaviour {
 		}
 	}
 
-	void OnTriggerEnter2D (Collider2D other)
+	void OnTriggerStay2D (Collider2D other)
 	{
 		//if (globalvars.carry == false && other.gameObject.name.Equals("Player"))
 		if (other.gameObject.name.Equals("Player"))

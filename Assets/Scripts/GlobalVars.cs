@@ -4,8 +4,8 @@ using System.Collections;
 
 public class GlobalVars : MonoBehaviour {
 
-	static float maxtime = 60;
-	static float wettime = 20;
+	static float maxtime = 99;
+	static float wettime = 33;
 	static float maxplayer = 300;
 	static float beerbonus = 50;
 
