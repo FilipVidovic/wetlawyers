@@ -5,16 +5,6 @@ public class HinterseeScript : MonoBehaviour {
 
 	public GameController gc;
 
-	// Use this for initialization
-	void Start () {
-
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		//scoreText.text = (globalvars.wetLawyers * Time.time).ToString();
-	}
-
 	void OnTriggerEnter2D (Collider2D other)
 	{
 		if(other.transform.parent.gameObject.name.StartsWith("Lawyer"))

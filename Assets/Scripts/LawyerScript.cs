@@ -12,7 +12,7 @@ public class LawyerScript : MonoBehaviour {
 
 	private bool floatingAround;
 	private BoxCollider2D boxCollider;
-	private float maxrage = 50;
+	private float maxrage = 150;
 	private float originalRotation;
 	private float originX;
 	private float originY;
@@ -83,6 +83,9 @@ public class LawyerScript : MonoBehaviour {
 
 	public void goingAggro()
 	{
+		if (floatingAround)
+			return;
+
 		if(!rigidBody.IsTouching(gc.returnCollider()))
 			rigidBody.AddForce (Vector2.Lerp(rigidBody.position, gc.playerPos() - rigidBody.position, 1)*15, ForceMode2D.Impulse);
 		else
