@@ -5,8 +5,8 @@ using System.Collections.Generic;
 
 public class GameController : MonoBehaviour {
 
-	static float maxtime = 99;
-	static float wettime = 33;
+	static float maxtime = 60;
+	static float wettime = 20;
 	//static float maxplayer = 300;
 	//static float beerbonus = 50;
 	int wetLawyers = 0;
@@ -266,7 +266,7 @@ public class GameController : MonoBehaviour {
 
 	void gameOver()
 	{
-		Application.LoadLevel (0);
+		Application.LoadLevel (1);
 	}
 
 	public Vector2 playerPos()
