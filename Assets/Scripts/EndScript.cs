@@ -18,13 +18,11 @@ public class EndScript : MonoBehaviour {
 
 		for (int i = 0; i < sks.scores.Count; ++i) {
 			int j = i;
-			print ("ey b0ss" + i);
 			for(int k = i; k < sks.scores.Count; ++k)
 			{
 				if(sks.scores[sortedList[j]] < sks.scores[sortedList[k]])
 				{
 					j = k;
-					print ("gib pusi pls" + k);
 				}
 			}
 			int help = sortedList[i];
