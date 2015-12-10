@@ -263,11 +263,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae1825bf64da82e4684258d042aaaf15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drunkenessLevel: {fileID: 11417426}
   drunkeness: 55
+  gc: {fileID: 0}
+  drunkenessLevel: {fileID: 11417426}
   rage: {fileID: 11437606}
   aggroRange: {fileID: 11410482}
-  gc: {fileID: 0}
 --- !u!114 &11466416
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -444,7 +444,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 112, y: 163.800003}
+  m_AnchoredPosition: {x: -410.619537, y: 256.415131}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22446884
