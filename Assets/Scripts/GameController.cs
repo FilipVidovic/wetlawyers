@@ -210,7 +210,7 @@ public class GameController : MonoBehaviour {
 	public void wetPlayer()
 	{
 		losing = true;
-		waterEndTime = Time.time + 10;
+		waterEndTime = Time.time + 2;
 	}
 
 	public void entersCarryArea(Collider2D lawyer)	//id?
@@ -266,6 +266,9 @@ public class GameController : MonoBehaviour {
 
 	void gameOver()
 	{
+		GameObject scoreKeeper = GameObject.Find ("ScoreKeeper");
+		ScoreKeeperScript sks = (ScoreKeeperScript)scoreKeeper.GetComponent ("ScoreKeeperScript");
+		sks.scores.Add (int.Parse(scoreText.text));
 		Application.LoadLevel (2);
 	}
 
