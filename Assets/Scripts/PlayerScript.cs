@@ -141,10 +141,10 @@ public class PlayerScript : MonoBehaviour {
 		rigidBody.rotation += rotval;
 	}
 	
-	public void moving (float dir)
+	public void moving (float dir, float offset)
 	{
 		//float eulerz = Mathf.Deg2Rad * this.transform.eulerAngles.z;
-		rigidBody.AddRelativeForce (new Vector2 (0, dir) * myforce);
+		rigidBody.AddRelativeForce (new Vector2 (offset, dir) * myforce);
 
 		//print ("HELO FEGOTS! " + rigidBody.transform.position);
 		//print ("WHY LISA WHY??? " + this.transform.parent.gameObject.transform.position);
