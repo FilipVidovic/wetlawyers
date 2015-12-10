@@ -19,8 +19,7 @@ using System.Collections;
 
 public class HinterseeScript : MonoBehaviour {
 
-	public PlayerTimer ourtimer;
-	public GlobalVars globalvars;
+	public GameController gc;
 
 	// Use this for initialization
 	void Start () {
@@ -34,12 +33,20 @@ public class HinterseeScript : MonoBehaviour {
 
 	void OnTriggerEnter2D (Collider2D other)
 	{
-		if (other.isTrigger || other.gameObject.name.Equals("Player")) {
+		/*if (other.isTrigger || other.gameObject.name.Equals("Player")) {
 			return;
+		}*/
+
+		if(other.transform.parent.gameObject.name.StartsWith("Lawyer"))
+		{
+			gc.wetLawyer ((LawyerScript)other.GetComponent ("LawyerScript"));
 		}
 
-		ourtimer.wetLawyer ();
-		globalvars.wetLawyers += 1;
+		if(other.transform.parent.gameObject.name.Equals("Player"))
+		{
+			gc.wetPlayer();
+		}
+
 		//scoreText.text = globalvars.wetLawyers.ToString();
 	}
 }

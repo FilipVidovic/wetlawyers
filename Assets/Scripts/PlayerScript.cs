@@ -4,48 +4,49 @@ using System.Collections;
 
 public class PlayerScript : MonoBehaviour {
 
-	private float moveTime = 0.01f;
-	private float inverseMoveTime;
-	private Vector2 direction;
-	private Vector3 rotvec;
-	private float rotval;
-	private float dir;
+	//private float moveTime = 0.01f;
+	//private float inverseMoveTime;
+	//private Vector2 direction;
+	//private Vector3 rotvec;
+	//private float rotval;
+	//private float dir;
 
 	private BoxCollider2D boxCollider;
-	public Rigidbody2D rigidBody;
-	public float myforce;
+	private Rigidbody2D rigidBody;
+	private float myforce;
 	
-	public RawImage drunkFrame;
-	public RawImage timeFrame;
-	public RawImage thistime;
-	public RawImage drunkenessLevel;
-	private Quaternion quatty;
-	public GlobalVars globalvars;
+	//public RawImage drunkFrame;
+	//public RawImage timeFrame;
+	//public RawImage thistime;
+	//public RawImage drunkenessLevel;
+	//private Quaternion quatty;
+	public GameController gc;
+	//public GlobalVars globalvars;
 
-	private float rotdelay;
-	private float movedelay;
-	public float drunkeness;
+	//private float rotdelay;
+	//private float movedelay;
+	//public float drunkeness;
 
 	// Use this for initialization
 	void Start () {
-		inverseMoveTime = 1f / moveTime;
-		direction = new Vector2 (0, 0);
-		rotvec = new Vector3 (0, 0, 0);
-		rotval = 0;
+		//inverseMoveTime = 1f / moveTime;
+		//direction = new Vector2 (0, 0);
+		//rotvec = new Vector3 (0, 0, 0);
+		//rotval = 0;
 
-		rotdelay = 0;
-		movedelay = 0;
-		drunkeness = 20;
+		//rotdelay = 0;
+		//movedelay = 0;
+		//drunkeness = 20;
 
 		boxCollider = GetComponent <BoxCollider2D> ();
-		//rigidBody = GetComponent <Rigidbody2D> ();
-		quatty = new Quaternion (0, 0, 0, 1);
+		rigidBody = GetComponent <Rigidbody2D> ();
+		//quatty = new Quaternion (0, 0, 0, 1);
 		
-		drunkenessLevel.transform.localScale = new Vector3 (0, 1, 1);
+		//drunkenessLevel.transform.localScale = new Vector3 (0, 1, 1);
 	}
 	
 	// Update is called once per frame			FIXEDUPDATE
-	void FixedUpdate () {
+	/*void FixedUpdate () {
 		drunkFrame.transform.rotation = quatty;
 		timeFrame.transform.rotation = quatty;
 		rotval = 0;
@@ -56,6 +57,14 @@ public class PlayerScript : MonoBehaviour {
 		}
 		if (Input.GetKeyDown (KeyCode.LeftArrow) || Input.GetKeyDown (KeyCode.RightArrow)) {
 			rotdelay = drunkeness/3;
+		}
+		
+		if (Input.GetKeyUp (KeyCode.UpArrow) || Input.GetKeyUp (KeyCode.DownArrow)) {
+			rigidBody.velocity = Vector2.zero;
+			//rigidBody.velocity = new Vector2(Mathf.Cos(rigidBody.rotation)+10,Mathf.Sin(rigidBody.rotation)+10);
+		}
+		if (Input.GetKeyUp (KeyCode.LeftArrow) || Input.GetKeyUp (KeyCode.RightArrow)) {
+			rigidBody.velocity = Vector2.zero;
 		}
 
 		if (Input.GetKey (KeyCode.LeftArrow)) {
@@ -99,9 +108,9 @@ public class PlayerScript : MonoBehaviour {
 		}
 		
 		drunkenessLevel.transform.localScale = new Vector3 (drunkeness / 100f, 1, 1);
-	}
+	}*/
 
-	private bool moving()
+	/*private bool moving()
 	{
 		float eulerz = Mathf.Deg2Rad * this.transform.eulerAngles.z;
 		//print ("Deg: " + this.transform.eulerAngles.z + "\nRad: " + eulerz);
@@ -116,40 +125,125 @@ public class PlayerScript : MonoBehaviour {
 
 		//StartCoroutine(smoothmoving(end));
 		return true;
-	}
+	}*/
 
-	private bool rotating()
+	/*private bool rotating()
 	{
 		//this.transform.localRotation = this.transform.localRotation * Quaternion.Euler (rotvec);
 		//rigidBody.rotation = rigidBody.rotation * Quaternion.Euler (rotvec);
 		rigidBody.rotation += rotval;
 		//this.transform.localEulerAngles.z = this.transform.localEulerAngles.z + 1;
 		return true;
-	}
+	}*/
 
-	void OnTriggerEnter2D (Collider2D other)
+	public void rotating (float rotval)
 	{
-		//print ("yippie");
+		rigidBody.rotation += rotval;
+	}
+	
+	public void moving (float dir)
+	{
+		//float eulerz = Mathf.Deg2Rad * this.transform.eulerAngles.z;
+		rigidBody.AddRelativeForce (new Vector2 (0, dir) * myforce);
+
+		//print ("HELO FEGOTS! " + rigidBody.transform.position);
+		//print ("WHY LISA WHY??? " + this.transform.parent.gameObject.transform.position);
+		//print (this.transform.position);
+		//print (this.transform.localPosition);
+		//this.transform.parent.gameObject.transform.position = this.transform.position - this.transform.localPosition;
+		this.transform.parent.gameObject.transform.position = this.transform.position;
+		this.transform.localPosition = new Vector2 (0, 0);
+		//GameObject obj = this.transform.parent.gameObject;
+		//obj.transform.Translate (new Vector2(-5, -5));
+	}
+	
+	public void stopMoving ()
+	{
+		rigidBody.velocity = Vector2.zero;
+		this.transform.localPosition = new Vector2 (0, 0);
 	}
 
-	public void addDrunkeness()
+	/*void OnTriggerEnter2D (Collider2D other)
+	{
+		if(other.transform.parent.gameObject.name.StartsWith("Lawyer"))
+			gc.entersCarryArea (other);
+
+		if (other.transform.gameObject.name.Equals ("Wall"))
+			gc.wallIsBlocking ();
+	}*/
+
+	public void GotSomething (Collider2D something)
+	{
+		if (something.transform.parent.gameObject.name.StartsWith("Lawyer"))
+			gc.entersCarryArea (something);
+		
+		if (something.transform.gameObject.name.Equals ("Wall"))
+			gc.wallIsBlocking ();
+	}
+	
+	/*void OnTriggerExit2D (Collider2D other)
+	{
+		if(other.transform.parent.gameObject.name.StartsWith("Lawyer"))
+			gc.leavesCarryArea (other);
+		
+		if (other.transform.gameObject.name.Equals ("Wall"))
+			gc.wallStoppedBlocking ();
+	}*/
+
+	public void LostSomething (Collider2D something)
+	{
+		if(something.transform.parent.gameObject.name.StartsWith("Lawyer"))
+			gc.leavesCarryArea (something);
+		
+		if (something.transform.gameObject.name.Equals ("Wall"))
+			gc.wallStoppedBlocking ();
+	}
+
+	/*public void addDrunkeness(float maxdrunkeness, float addedDrunkeness = 20)
 	{
 		//rigidBody.mass += globalvars.getBeerBonus ();
 		
 		//if (rigidBody.mass > globalvars.getMaxPlayer ())
 		//	rigidBody.mass = globalvars.getMaxPlayer ();
 		//print (
-		drunkeness += 20;
+		drunkeness += addedDrunkeness;
 
-		if (drunkeness > 100) {
-			drunkeness = 100;
+		if (drunkeness > maxdrunkeness) {
+			drunkeness = maxdrunkeness;
 		}
 
 		drunkenessLevel.transform.localScale = new Vector3 (drunkeness / 100f, 1, 1);
+	}*/
+
+	public float getRotation()
+	{
+		return rigidBody.rotation + 90;;
+	}
+
+	public void setMyForce(float force)
+	{
+		myforce = force;
 	}
 	
 	/*private IEnumerator smoothmoving(Vector3 end)
 	{
 
 	}*/
+	
+	public void thisWasUnfortunate ()
+	{
+		rigidBody.AddForce (Vector2.right * 450, ForceMode2D.Impulse);
+		this.transform.parent.gameObject.transform.position = this.transform.position;
+		this.transform.localPosition = new Vector2 (0, 0);
+	}
+
+	public Vector2 returnPos()
+	{
+		return rigidBody.position;
+	}
+
+	public BoxCollider2D returnCollider()
+	{
+		return boxCollider;
+	}
 }
