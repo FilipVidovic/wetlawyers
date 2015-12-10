@@ -22,7 +22,11 @@ public class PlayerScript : MonoBehaviour {
 	
 	public void moving (float dir, float offset)
 	{
-		rigidBody.AddRelativeForce (new Vector2 (offset, dir) * myforce);
+		if(dir == 1)
+			rigidBody.AddRelativeForce (new Vector2 (offset, dir) * myforce);
+		else
+			rigidBody.AddRelativeForce (new Vector2 (offset, dir) * myforce * 0.8f);
+
 		this.transform.parent.gameObject.transform.position = this.transform.position;
 		this.transform.localPosition = new Vector2 (0, 0);
 	}
