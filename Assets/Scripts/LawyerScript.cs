@@ -54,7 +54,7 @@ public class LawyerScript : MonoBehaviour {
 		}
 
 		if (rageLevel > 0) {
-			rageLevel -= 0.025f;
+			rageLevel -= 0.015f;
 
 			if(rageLevel < 0)
 				rageLevel = 0;

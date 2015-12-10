@@ -52,7 +52,7 @@ public class GameController : MonoBehaviour {
 		Score = 0;
 		losing = false;
 		drunkenessLevel.transform.localScale = new Vector3 (0, 1, 1);
-		drunkeness = maxdrunkeness;	//0
+		drunkeness = 50;	//0
 	}
 	
 	// Update is called once per frame
@@ -80,7 +80,7 @@ public class GameController : MonoBehaviour {
 				gameOver ();
 		}
 
-		drunkeness -= 0.025f;
+		drunkeness -= 0.015f;
 		if (drunkeness < 0) {
 			drunkeness = 0;
 		}
