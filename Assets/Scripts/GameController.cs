@@ -266,7 +266,7 @@ public class GameController : MonoBehaviour {
 
 	void gameOver()
 	{
-		Application.LoadLevel (1);
+		Application.LoadLevel (2);
 	}
 
 	public Vector2 playerPos()
