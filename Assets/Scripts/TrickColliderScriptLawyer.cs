@@ -21,7 +21,5 @@ public class TrickColliderScriptLawyer : MonoBehaviour {
 			LawyerScript myLawyer = (LawyerScript)this.transform.parent.GetComponent ("LawyerScript");
 			myLawyer.goingAggro();
 		}
-
-		//this.transform.parent.gameObject.GetComponent
 	}
 }

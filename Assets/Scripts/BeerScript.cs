@@ -4,11 +4,12 @@ using System.Collections;
 
 public class BeerScript : MonoBehaviour {
 
-	public GameObject Figure;
 	public GameController gc;
-	private float respawnTime;
-	private bool empty;
+	public GameObject Figure;
 	public RawImage BeerPic;
+
+	private bool empty;
+	private float respawnTime;
 
 	// Use this for initialization
 	void Start () {
@@ -27,9 +28,7 @@ public class BeerScript : MonoBehaviour {
 
 	void OnTriggerEnter2D (Collider2D other)
 	{
-		//player.rigidBody.mass += 150;
-
-		if (other.isTrigger) {
+		if (other.isTrigger || empty == true) {
 			return;
 		}
 
@@ -37,14 +36,5 @@ public class BeerScript : MonoBehaviour {
 		respawnTime = Time.time + 20;
 		empty = true;
 		BeerPic.gameObject.SetActive(false);
-		//this.child
-
-
-		//player.addDrunkeness ();
-
-		//print ("beeeeeeeeeeeeeeeeeeeer");
-
-		//Destroy (Figure);
-		//Destroy (this);
 	}
 }

@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 
 public class PlayerScript : MonoBehaviour {
+
 	public GameController gc;
 
 	private BoxCollider2D boxCollider;

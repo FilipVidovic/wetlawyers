@@ -206,7 +206,7 @@ public class GameController : MonoBehaviour {
 
 		++wetLawyers;
 
-		wettedLawyer.iGotSoWet (20f);
+		wettedLawyer.iGotSoWet (60f);
 	}
 
 	public void wetPlayer()
