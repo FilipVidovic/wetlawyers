@@ -1713,6 +1713,10 @@ Prefab:
       propertyPath: drunkeness
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 6194014, guid: b9d1bbb11c052984b8e78bcf396616a9, type: 2}
+      propertyPath: m_UsedByEffector
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b9d1bbb11c052984b8e78bcf396616a9, type: 2}
   m_IsPrefabParent: 0

@@ -6,8 +6,8 @@ public class PlayerScript : MonoBehaviour {
 	public GameController gc;
 
 	private BoxCollider2D boxCollider;
-	private Rigidbody2D rigidBody;
 	private float myforce;
+	private Rigidbody2D rigidBody;
 
 	// Use this for initialization
 	void Start () {

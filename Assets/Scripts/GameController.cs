@@ -46,7 +46,7 @@ public class GameController : MonoBehaviour {
 		hinderingWalls = 0;
 		inverseMoveTime = 1f / moveTime;
 		rotval = 0;
-		player.setMyForce (4000);
+		player.setMyForce (6000);
 		carry = false;
 		wetLawyers = 0;
 		Score = 0;
@@ -136,6 +136,7 @@ public class GameController : MonoBehaviour {
 					{
 						carry = true;
 						carryableLawyers[indexCarriedLawyer].gameObject.transform.parent.gameObject.SetActive(false);
+						player.setMyForce (4000);
 					}
 				}
 			}
@@ -143,6 +144,7 @@ public class GameController : MonoBehaviour {
 		else if (carry == true) {
 			if (Input.GetKeyDown (KeyCode.Space)) {
 				carry = false;
+				player.setMyForce (6000);
 				carryableLawyers[indexCarriedLawyer].gameObject.transform.parent.gameObject.SetActive(true);
 				carryableLawyers[indexCarriedLawyer].gameObject.transform.parent.gameObject.transform.position = 
 					new Vector2(player.transform.position.x+Mathf.Round(Mathf.Cos(Mathf.Deg2Rad * player.getRotation())*30),
