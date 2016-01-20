@@ -95,19 +95,19 @@ public class GameController : MonoBehaviour {
 		}
 
 		if (Input.GetKey (KeyCode.RightArrow)) {
-			player.rotating(-1f);
+			player.rotating(-3f);
 		}
 
 		if (Input.GetKey (KeyCode.LeftArrow)) {
-			player.rotating(1f);
+			player.rotating(3f);
 		}
 		
 		if (Input.GetKey (KeyCode.UpArrow)) {
-			player.moving(1f, (Random.value * (drunkeness/2 - (-drunkeness/2)) + -drunkeness/2)/10);
+			player.moving(3f, (Random.value * (drunkeness/2 - (-drunkeness/2)) + -drunkeness/2)/10);
 		}
 		
 		if (Input.GetKey (KeyCode.DownArrow)) {
-			player.moving(-1f, (Random.value * (drunkeness/2 - (-drunkeness/2)) + -drunkeness/2)/10);
+			player.moving(-3f, (Random.value * (drunkeness/2 - (-drunkeness/2)) + -drunkeness/2)/10);
 		}
 		
 		if (!Input.GetKey (KeyCode.UpArrow) && !Input.GetKey (KeyCode.DownArrow)) {

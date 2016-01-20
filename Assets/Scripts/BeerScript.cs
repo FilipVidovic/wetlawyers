@@ -33,7 +33,7 @@ public class BeerScript : MonoBehaviour {
 		}
 
 		gc.addDrunkeness ();
-		respawnTime = Time.time + 20;
+		respawnTime = Time.time + 30;
 		empty = true;
 		BeerPic.gameObject.SetActive(false);
 	}
