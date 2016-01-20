@@ -103,12 +103,14 @@ public class GameController : MonoBehaviour {
 		}
 		
 		if (Input.GetKey (KeyCode.UpArrow)) {
-			player.moving(3f, (Random.value * (drunkeness/2 - (-drunkeness/2)) + -drunkeness/2)/10);
-		}
+            //player.moving(3f, (Random.value * (drunkeness/2 - (-drunkeness/2)) + -drunkeness/2)/10);
+            player.moving(3f, (Random.value * drunkeness - drunkeness / 2) / 6);
+        }
 		
 		if (Input.GetKey (KeyCode.DownArrow)) {
-			player.moving(-3f, (Random.value * (drunkeness/2 - (-drunkeness/2)) + -drunkeness/2)/10);
-		}
+            //player.moving(-3f, (Random.value * (drunkeness/2 - (-drunkeness/2)) + -drunkeness/2)/10);
+            player.moving(-3f, (Random.value * drunkeness - drunkeness / 2) / 6);
+        }
 		
 		if (!Input.GetKey (KeyCode.UpArrow) && !Input.GetKey (KeyCode.DownArrow)) {
 			player.stopMoving();
