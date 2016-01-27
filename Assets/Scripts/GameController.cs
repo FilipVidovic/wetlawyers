@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 using System.Collections;
 using System.Collections.Generic;
 
+[RequireComponent(typeof(AudioSource))]
 public class GameController : MonoBehaviour {
 
 	static float maxtime = 60;
@@ -15,6 +17,7 @@ public class GameController : MonoBehaviour {
 	private bool carry;
 	public Text scoreText;
 	float endTime;
+	float remainingTime;
 	public RawImage timebar;
 	public PlayerScript player;
 	List<Collider2D> carryableLawyers;	//id?
@@ -32,6 +35,8 @@ public class GameController : MonoBehaviour {
 	private float waterEndTime;
 	public RawImage drunkenessLevel;
 	private float drunkeness;
+
+	AudioSource underground;
 
 	//public BeerScript beer2hide;
 	//float beerhidingtime;
@@ -53,6 +58,9 @@ public class GameController : MonoBehaviour {
 		losing = false;
 		drunkenessLevel.transform.localScale = new Vector3 (0, 1, 1);
 		drunkeness = 50;	//0
+
+		underground = GetComponent<AudioSource> ();
+		underground.pitch = 1.0f;
 	}
 	
 	// Update is called once per frame
@@ -78,6 +86,17 @@ public class GameController : MonoBehaviour {
 				player.thisWasUnfortunate();
 			} else
 				gameOver ();
+		}
+
+		remainingTime = endTime - Time.time;
+		if (remainingTime < 5f) {
+			underground.pitch = 1.75f;
+		} else if (remainingTime < 10f) {
+			underground.pitch = 1.6f;
+		} else if (remainingTime < 20f) {
+			underground.pitch = 1.4f;
+		} else if (remainingTime < 30f) {
+			underground.pitch = 1.2f;
 		}
 
 		drunkeness -= 0.015f;
