@@ -90,12 +90,12 @@ public class GameController : MonoBehaviour {
 
 		remainingTime = endTime - Time.time;
 		if (remainingTime < 5f) {
-			underground.pitch = 1.75f;
+			underground.pitch = 1.8f;
 		} else if (remainingTime < 10f) {
 			underground.pitch = 1.6f;
-		} else if (remainingTime < 20f) {
+		} else if (remainingTime < 15f) {
 			underground.pitch = 1.4f;
-		} else if (remainingTime < 30f) {
+		} else if (remainingTime < 20f) {
 			underground.pitch = 1.2f;
 		}
 

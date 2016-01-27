@@ -87,8 +87,8 @@ public class LawyerScript : MonoBehaviour {
 			return;
 
 		if(!rigidBody.IsTouching(gc.returnCollider()))
-			rigidBody.AddForce (Vector2.Lerp(rigidBody.position, gc.playerPos() - rigidBody.position, 1)*20, ForceMode2D.Impulse);
+			rigidBody.AddForce (Vector2.Lerp(rigidBody.position, gc.playerPos() - rigidBody.position, 1)*30, ForceMode2D.Impulse);
 		else
-			rigidBody.AddForce (Vector2.Lerp(rigidBody.position, gc.playerPos() - rigidBody.position, 1)*10, ForceMode2D.Impulse);
+			rigidBody.AddForce (Vector2.Lerp(rigidBody.position, gc.playerPos() - rigidBody.position, 1)*30, ForceMode2D.Impulse);
 	}
 }

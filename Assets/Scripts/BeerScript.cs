@@ -6,7 +6,7 @@ public class BeerScript : MonoBehaviour {
 
 	public GameController gc;
 	public GameObject Figure;
-	public RawImage BeerPic;
+	public Image BeerPic;
 
 	private bool empty;
 	private float respawnTime;
