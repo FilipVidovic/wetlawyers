@@ -15,7 +15,12 @@ public class TrickColliderScriptLawyer : MonoBehaviour {
 		circleCollider.radius = newRadius;
 	}
 
-	void OnTriggerStay2D (Collider2D other)
+    public float getRadius()
+    {
+        return circleCollider.radius;
+    }
+
+    void OnTriggerStay2D (Collider2D other)
 	{
 		if (other.transform.parent.gameObject.name.Equals ("Player")) {
 			LawyerScript myLawyer = (LawyerScript)this.transform.parent.GetComponent ("LawyerScript");

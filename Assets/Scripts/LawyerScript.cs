@@ -36,13 +36,14 @@ public class LawyerScript : MonoBehaviour {
 		rageLevel = 0;
 		rage.transform.localScale = new Vector3 (0, 1, 1);
 		aggroRange.setRadius (rageLevel);
+        respawnTime = 0;
 
         image = GetComponent<Image>();
     }
 
 	// Update is called once per frame
 	void Update () {
-		if (floatingAround == true) {
+        if (floatingAround == true) {
 			if ((respawnTime - Time.time) <= 0) {
 				this.transform.parent.gameObject.transform.position = new Vector2(originX, originY);
 				rigidBody.rotation = originalRotation;
