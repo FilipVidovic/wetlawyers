@@ -9,8 +9,10 @@ public class LawyerScript : MonoBehaviour {
 	public RawImage drunkenessLevel;
 	public RawImage rage;
 	public TrickColliderScriptLawyer aggroRange;
+    public Sprite idleImage;
+    public Sprite floatImage;
 
-	private bool floatingAround;
+    private bool floatingAround;
 	private BoxCollider2D boxCollider;
 	private float maxrage = 150;
 	private float originalRotation;
@@ -19,9 +21,10 @@ public class LawyerScript : MonoBehaviour {
 	private float rageLevel;
 	private float respawnTime;
 	private Rigidbody2D rigidBody;
+    private Image image;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		boxCollider = GetComponent <BoxCollider2D> ();
 		drunkenessLevel.transform.localScale = new Vector3 (drunkeness / 100f, 1, 1);
 		rigidBody = GetComponent <Rigidbody2D> ();
@@ -33,7 +36,9 @@ public class LawyerScript : MonoBehaviour {
 		rageLevel = 0;
 		rage.transform.localScale = new Vector3 (0, 1, 1);
 		aggroRange.setRadius (rageLevel);
-	}
+
+        image = GetComponent<Image>();
+    }
 
 	// Update is called once per frame
 	void Update () {
@@ -46,7 +51,8 @@ public class LawyerScript : MonoBehaviour {
 				rageLevel = maxrage;
 				rage.transform.localScale = new Vector3 (rageLevel/maxrage, 1, 1);
 				aggroRange.setRadius (rageLevel);
-			}
+                changeImage(-1);
+            }
 		}
 
 		if (rageLevel > 0) {
@@ -79,6 +85,7 @@ public class LawyerScript : MonoBehaviour {
 	{
 		respawnTime = Time.time + waitThisLong;
 		floatingAround = true;
+        changeImage(1);
 	}
 
 	public void goingAggro()
@@ -86,9 +93,29 @@ public class LawyerScript : MonoBehaviour {
 		if (floatingAround)
 			return;
 
-		if(!rigidBody.IsTouching(gc.returnCollider()))
+        rigidBody.AddForce(Vector2.Lerp(rigidBody.position, gc.playerPos() - rigidBody.position, 1) * 30, ForceMode2D.Impulse);
+        /*if(!rigidBody.IsTouching(gc.returnCollider()))
 			rigidBody.AddForce (Vector2.Lerp(rigidBody.position, gc.playerPos() - rigidBody.position, 1)*30, ForceMode2D.Impulse);
 		else
-			rigidBody.AddForce (Vector2.Lerp(rigidBody.position, gc.playerPos() - rigidBody.position, 1)*30, ForceMode2D.Impulse);
-	}
+			rigidBody.AddForce (Vector2.Lerp(rigidBody.position, gc.playerPos() - rigidBody.position, 1)*30, ForceMode2D.Impulse);*/
+    }
+
+    private void changeImage(int posture)
+    {
+        switch (posture)
+        {
+            case 1:
+                image.sprite = floatImage;
+                //image.sprite.rect.size.
+                //image.sprite.rect.size.Set(40f, 40f);
+                image.transform.localScale = new Vector3(2f, 2f, 1.0f);
+                break;
+            default:
+                image.sprite = idleImage;
+                image.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+                //image.transform.localScale.Set(33.39f, 25.83f, 1f);
+                break;
+
+        }
+    }
 }
