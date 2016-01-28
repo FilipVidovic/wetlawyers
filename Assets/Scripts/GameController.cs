@@ -84,7 +84,8 @@ public class GameController : MonoBehaviour {
 		if (losing == true) {
 			if ((waterEndTime - Time.time) > 0) {
 				player.thisWasUnfortunate();
-			} else
+                player.changeImage(2);
+            } else
 				gameOver ();
 		}
 
@@ -158,6 +159,7 @@ public class GameController : MonoBehaviour {
 						carry = true;
 						carryableLawyers[indexCarriedLawyer].gameObject.transform.parent.gameObject.SetActive(false);
 						player.setMyForce (4000);
+                        player.changeImage(1);
 					}
 				}
 			}
@@ -166,7 +168,8 @@ public class GameController : MonoBehaviour {
 			if (Input.GetKeyDown (KeyCode.Space)) {
 				carry = false;
 				player.setMyForce (6000);
-				carryableLawyers[indexCarriedLawyer].gameObject.transform.parent.gameObject.SetActive(true);
+                player.changeImage(-1);
+                carryableLawyers[indexCarriedLawyer].gameObject.transform.parent.gameObject.SetActive(true);
 				carryableLawyers[indexCarriedLawyer].gameObject.transform.parent.gameObject.transform.position = 
 					new Vector2(player.transform.position.x+Mathf.Round(Mathf.Cos(Mathf.Deg2Rad * player.getRotation())*30),
 					            player.transform.position.y+Mathf.Round(Mathf.Sin(Mathf.Deg2Rad * player.getRotation())*30));
